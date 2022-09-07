@@ -1,0 +1,94 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+/* ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
+
+.sortBtn {
+  cursor: pointer;
+  height: 32px;
+  border-radius: 3px;
+  border: 1px solid rgba(55, 53, 47, 0.16);
+  background: white;
+  width: 100px;
+  height: 50px;
+  border-radius: 3px;
+  border: 1px solid rgba(55, 53, 47, 0.16);
+}
+
+.sortBtn:hover {
+  cursor: pointer;
+  background-color: rgb(225, 225, 225);
+}
+
+.dropdown {
+  width: 300px;
+  position: relative;
+  margin: 5px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 50px;
+  border-radius: 3px;
+  border: 1px solid rgba(55, 53, 47, 0.16);
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: rgb(225, 225, 225);
+}
+
+.content {
+  position: absolute;
+  transition: background 20ms ease-in 0s;
+  cursor: pointer;
+  pointer-events: none;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 3px;
+  background: rgba(55, 53, 47, 0.08);
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: rgb(15 15 15 / 5%) 0px 0px 0px 1px,
+    rgb(15 15 15 / 10%) 0px 3px 6px, rgb(15 15 15 / 20%) 0px 9px 24px;
+  transition: opacity 150ms ease-in,
+    transform 150ms cubic-bezier(0.42, -0.02, 1, 1);
+  opacity: 0;
+  transform: translate3d(0, -5px, 0);
+  z-index: -50;
+  padding: 5px;
+}
+
+.content p {
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.dropdown.active > .button + .content {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  pointer-events: auto;
+  z-index: 50;
+}
